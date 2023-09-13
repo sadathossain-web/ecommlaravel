@@ -43,6 +43,7 @@ class CouponController extends Controller
        $coupon_id = $request->id;
     Coupon::findOrFail($coupon_id)->update([
         'coupon_name' => strtoupper($request->coupon_name),
+        'discount' => $request->discount,
         'updated_at' => Carbon::now(),
        ]);
 
