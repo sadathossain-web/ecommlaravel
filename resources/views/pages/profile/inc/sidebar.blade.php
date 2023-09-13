@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top"  style="border-radius: 50%;" src="#" height="100%;" width="100%;" alt="Card image cap">
+    <img class="card-img-top"  style="border-radius: 50%;" src="{{ asset('fontend') }}/img/img7.jpg" height="100%;" width="100%;" alt="Card image cap">
     <ul class="list-group list-group-flush">
       <a href="{{ route('home') }}" class="btn btn-primary btn-sm btn-block">Home</a>
       <a href="{{ route('user.order') }}" class="btn btn-primary btn-sm btn-block">My Orders</a>

@@ -5,13 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Twitter -->
-    <meta name="twitter:site" content="@themepixels">
-    <meta name="twitter:creator" content="@themepixels">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Starlight">
-    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="twitter:image" content="http://themepixels.me/starlight/img/starlight-social.png">
 
     <!-- Facebook -->
     <meta property="og:url" content="http://themepixels.me/starlight">
@@ -47,7 +40,7 @@
 
   <body>
 
-    @guest
+    @guest("admin")
     @else
     <!-- ########## START: LEFT PANEL ########## -->
     <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i> Admin Panel</a></div>
@@ -135,7 +128,7 @@
         <nav class="nav">
           <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name"><span class="hidden-md-down"></span></span>
+              <span class="logged-name">Admin<span class="hidden-md-down"></span></span>
               <img src="{{ asset('backend') }}/img/img3.jpg" class="wd-32 rounded-circle" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">
