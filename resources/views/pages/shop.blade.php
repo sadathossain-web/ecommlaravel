@@ -162,7 +162,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sidebar__item">
+                        {{-- <div class="sidebar__item">
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
                                 <div class="latest-product__slider owl-carousel">
@@ -226,14 +226,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
-                        <div class="section-title product__discount__title">
+                        {{-- <div class="section-title product__discount__title">
                             <h2>Sale Off</h2>
-                        </div>
+                        </div> --}}
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 @foreach ($products as $product)

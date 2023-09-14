@@ -62,7 +62,7 @@
                         </td>
                         <td>
                             <a href="{{ url('admin/orders/view/'.$row->id) }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                            <a href="{{ url('admin/coupon/delete/'.$row->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('are you shure to delete')"><i class="fa fa-trash"></i></a>
+                            <a href="{{ url('admin/products/delete/'.$row->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('are you shure to delete')"><i class="fa fa-trash"></i></a>
                         </td>
                       </tr>
                       @endforeach
