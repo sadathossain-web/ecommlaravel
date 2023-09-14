@@ -9,10 +9,10 @@
 
     <div class="sl-pagebody">
       <div class="row row-sm">
-        <div class="col-md-12">    
+        <div class="col-md-12">
               <div class="card pd-20 pd-sm-40">
-                <h6 class="card-body-title">Order list</h6>    
-                
+                <h6 class="card-body-title">Order list</h6>
+
                   @if(session('status'))
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
                   <strong>{{session('status')}}</strong>
@@ -20,7 +20,7 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    @endif  
+                    @endif
                   @if(session('delete'))
                   <div class="alert alert-danger alert-dismissible fade show" role="alert">
                   <strong>{{session('delete')}}</strong>
@@ -36,8 +36,9 @@
                         <th class="wd-15p">Sl</th>
                         <th class="wd-15p">Invoice No</th>
                         <th class="wd-15p">Payment Type</th>
-                        <th class="wd-20p">Total</th>  
-                        <th class="wd-20p">Sub Total</th>  
+                        <th class="wd-20p">Total</th>
+                        <th class="wd-20p">Sub Total</th>
+                        <th class="wd-20p">Coupons</th>
                         <th class="wd-25p">Action</th>
                       </tr>
                     </thead>
@@ -55,7 +56,7 @@
                         <td>
                             @if($row->coupon_discount == NULL)
                             <span class="badge badge-danger">No</span>
-                            @else 
+                            @else
                             <span class="badge badge-success">Yes</span>
                             @endif
                         </td>
