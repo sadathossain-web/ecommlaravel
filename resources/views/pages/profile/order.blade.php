@@ -81,7 +81,9 @@
                         <th scope="col">Invoice No.</th>
                         <th scope="col">Payment Type</th>
                         <th scope="col">Sub Total</th>
+                        <th scope="col">Coupon</th>
                         <th scope="col">Total</th>
+                        <th scope="col">Delivery Status</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -91,7 +93,20 @@
                         <td>{{ $item->invoice_no }}</td>
                         <td>{{ $item->payment_type }}</td>
                         <td>{{ $item->subtotal }}$</td>
+                        <td>
+                            @if($item->coupon_discount == NULL)
+                            <span class="badge badge-danger">No</span>
+                            @else
+                            <span class="badge badge-success">Yes</span>
+                            @endif
+                        </td>
                         <td>{{ $item->total }}$</td>
+                        <td>
+                             @if($item->delivery_status == 1)
+                            <span class="badge badge-warning">Processing</span>
+                            @else
+                            <span class="badge badge-success">Delivered</span>
+                            @endif</td></td>
                         <td>
                             <a href="{{ url('user/order-view/'.$item->id) }}" class="btn btn-danger btn-sm">View</a>
                         </td>

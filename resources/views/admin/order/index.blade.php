@@ -13,22 +13,15 @@
               <div class="card pd-20 pd-sm-40">
                 <h6 class="card-body-title">Order list</h6>
 
-                  @if(session('status'))
+                  @if(session('delivery_status'))
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  <strong>{{session('status')}}</strong>
+                  <strong>{{session('delivery_status')}}</strong>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     @endif
-                  @if(session('delete'))
-                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <strong>{{session('delete')}}</strong>
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    @endif
+
                 <div class="table-wrapper">
                   <table id="datatable1" class="table display responsive nowrap">
                     <thead>
@@ -39,6 +32,7 @@
                         <th class="wd-20p">Total</th>
                         <th class="wd-20p">Sub Total</th>
                         <th class="wd-20p">Coupons</th>
+                        <th class="wd-20p">Delivery Status</th>
                         <th class="wd-25p">Action</th>
                       </tr>
                     </thead>
@@ -61,8 +55,18 @@
                             @endif
                         </td>
                         <td>
+                            @if($row->delivery_status == 1)
+                            <span class="badge badge-warning">Processing</span>
+                            @else
+                            <span class="badge badge-success">Delivered</span>
+                            @endif</td>
+                        <td>
                             <a href="{{ url('admin/orders/view/'.$row->id) }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                            <a href="{{ url('admin/products/delete/'.$row->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('are you shure to delete')"><i class="fa fa-trash"></i></a>
+                            @if($row->delivery_status == 1)
+                            <a href="{{ url('admin/orders/procssing/'.$row->id) }}" class="btn btn-sm btn-warning">Processing</a>
+                            @else
+                            <a href="{{ url('admin/orders/delivered/'.$row->id) }}" class="btn btn-sm btn-success">Delivered</a>
+                            @endif
                         </td>
                       </tr>
                       @endforeach
@@ -72,6 +76,8 @@
               </div><!-- card -->
         </div>
     </div>
+
+    <!--onclick="return confirm('are you shure to delete')" -->
 
 </div>
 @endsection

@@ -101,7 +101,7 @@
                             </thead>
                             <tbody>
                             @foreach ($carts as $cart)
-                                
+
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="{{ asset($cart->product->image_one) }}" style="height: 70px; width:70px;" alt="">
@@ -125,14 +125,14 @@
                                         {{ $cart->price * $cart->qty }}
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                       
+
                                             <a href="{{ url('cart/destroy/'.$cart->id) }}"> <span class="icon_close">
                                             </span>
                                             </a>
-                                        
+
                                     </td>
                                 </tr>
-                            @endforeach  
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -142,17 +142,17 @@
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
                         <a href="{{ url('/') }}" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    
+
                     @if (Session::has('coupon'))
-                    @else 
+                    @else
                     <div class="shoping__continue">
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
-                           
+
                             <form action="{{ url('coupon/apply') }}" method="POST">
                                 @csrf
                                 <input type="text" name="coupon_name" placeholder="Enter your coupon code">
@@ -166,13 +166,13 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                          
+
                         @if (Session::has('coupon'))
                             <li>Subtotal <span>${{ $subtotal }}</span></li>
                             <li>Coupon <span>{{ session()->get('coupon')['coupon_name'] }} <a href="{{ url('coupon/destroy') }}">X</a> </span></li>
-                            <li>Discount <span>{{ session()->get('coupon')['coupon_discount'] }}% ( {{    session()->get('coupon')['discount_amount'] }} tk )</span></li>
+                            <li>Discount <span>{{ session()->get('coupon')['coupon_discount'] }}% ( {{    session()->get('coupon')['discount_amount'] }} $ )</span></li>
                             <li>Total <span>${{ $subtotal - session()->get('coupon')['discount_amount'] }}</span></li>
-                        @else 
+                        @else
                             <li>Total <span>${{ $subtotal }}</span></li>
                         @endif
                         </ul>

@@ -32,7 +32,7 @@ class OrderController extends Controller
 
         $carts = Cart::where('user_ip',request()->ip())->latest()->get();
             foreach ($carts as $cart ) {
-          
+
                 OrderItem::insert([
                     'order_id' => $order_id,
                     'product_id' => $cart->product_id,
