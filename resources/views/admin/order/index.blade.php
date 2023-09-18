@@ -13,14 +13,14 @@
               <div class="card pd-20 pd-sm-40">
                 <h6 class="card-body-title">Order list</h6>
 
-                  @if(session('delivery_status'))
+                  {{-- @if(session('delivery_status'))
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
                   <strong>{{session('delivery_status')}}</strong>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    @endif
+                    @endif --}}
 
                 <div class="table-wrapper">
                   <table id="datatable1" class="table display responsive nowrap">
@@ -63,9 +63,9 @@
                         <td>
                             <a href="{{ url('admin/orders/view/'.$row->id) }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
                             @if($row->delivery_status == 1)
-                            <a href="{{ url('admin/orders/procssing/'.$row->id) }}" class="btn btn-sm btn-warning">Processing</a>
+                            <a href="{{ url('admin/orders/'.$row->id) }}" class="btn btn-sm btn-warning">Delivered</a>
                             @else
-                            <a href="{{ url('admin/orders/delivered/'.$row->id) }}" class="btn btn-sm btn-success">Delivered</a>
+                            <a href="{{ url('admin/orders/'.$row->id) }}" class="btn btn-sm btn-success">Delivered</a>
                             @endif
                         </td>
                       </tr>

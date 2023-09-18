@@ -66,8 +66,8 @@ Route::get('admin/coupon/active/{coupon_id}','Admin\CouponController@Active');
 //
 Route::get('admin/orders','Admin\OrdersController@orderIndex')->name('admin.orders');
 Route::get('admin/orders/view/{id}','Admin\OrdersController@viewOrder');
-Route::get('admin/orders/procssing/{order_id}','Admin\OrdersController@orderInactive');
-Route::get('admin/orders/delivered/{order_id}','Admin\OrdersController@orderActive');
+Route::get('admin/orders/{order_id}','Admin\OrdersController@orderInactive');
+Route::get('admin/orders/{order_id}','Admin\OrdersController@orderActive');
 // =========================== fontend routes ===================
 // ================= cart ============
 Route::post('add/to-cart/{prouct_id}','CartController@addToCart');

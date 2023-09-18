@@ -30,15 +30,15 @@ class OrdersController extends Controller
 
     // status Processing
     public function orderInactive($order_id){
-        Order::findOrFail($order_id)->update(['delivery_status' => 1]);
-        return Redirect()->back()->with('delivery_status','Delivery Status Processing');
+        Order::find($order_id)->update(['delivery_status' => 1]);
+        return Redirect()->back();
     }
 
 
     // status Delivered
     public function orderActive($order_id){
-        Order::findOrFail($order_id)->update(['delivery_status' => 0]);
-        return Redirect()->back()->with('delivery_status','Delivery Status Delivered');
+        Order::find($order_id)->update(['delivery_status' => 0]);
+        return Redirect()->back();
     }
 
 }
